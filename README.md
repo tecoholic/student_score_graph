@@ -1,4 +1,4 @@
-# Student Score Grap
+# Student Score Graph
 
 Student Subject Marks as Line Graph
 
