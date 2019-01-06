@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Score Graph</title>
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='bulma-0.7.2/css/bulma.min.css') }}">
+</head>
+<body>
+
+<section class="hero is-dark">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Student Score Graph Generator</h1>
+      <h2 class="subtitle">
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <form action="" method="post" enctype="multipart/form-data">
+      <div class="field">
+        {{ form.csrf_token }}
+        {{ form.csvfile.label(class="label") }}
+        <div class="control">
+          {{ form.csvfile(class="input") }}
+        </div>
+      </div>
+
+      <div class="filed">
+        <div class="control">
+          <input type="submit" class="button is-primary" value="Upload">
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h4 class="title is-4">Step 1: Upload CSV File</h4>
+        <p>Upload a csv file containing the marks in the following format.</p>
+        <pre>Name, Subject 1, Subject 2, Subject 3, Subject 4, Subject 5</pre>
+        <p><br></p>
+        <p>ℹ️ You can have any number of subjects in the file.</p>
+        <p><br></p>
+        <p>If you have an excel sheet with the name of the students and their
+          marks, select File
+          -> Save As and choose Comma Separated Value (.csv) as the file
+          extension and save the file
+          to get the csv file.</p>
+      </div>
+      <div class="column">
+        <h4 class="title is-4">Step 2: Download Graphs</h4>
+        <p>Wait for the application to finish generating the graphs
+          and download the zip file containing graphs for each student.</p>
+        <p><br></p>
+        <h5 class="title is-5">Sample Graph</h5>
+        <figure class="image">
+          <img src="{{ url_for('static', filename='sample_graph.png') }}">
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container content has-centered">
+    <p>
+      A simple Flask App by <a
+        href="https://twitter.com/tecoholic">@tecoholic</a>. Source Code at
+      <a href="https://github.com/tecoholic/student_score_graph">Github</a>.
+    </p>
+  </div>
+</footer>
+</body>
+</html>

@@ -14,4 +14,6 @@ python student_graph.py <file.csv>
 
 ## Output
 
-A seperate graph is generated for each student like this ![Sample Graph](./Student_A.png)
+A seperate graph is generated for each student like this
+
+![Sample Graph](./static/sample_graph.png)
